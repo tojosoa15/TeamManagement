@@ -25,6 +25,11 @@ bash
 
 composer install
 
+
+Remarque : le nom de base c'est "team_management", vous pouvez l'importé direcectement et elle se trouve dans la souce du projet.
+
+
+
     Configurez les variables d'environnement :
 
 Créez un fichier .env.local à la racine du projet et configurez les variables d'environnement nécessaires. Vous pouvez utiliser le fichier .env comme base.
