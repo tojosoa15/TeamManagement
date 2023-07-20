@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ma page</title>
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sell_buy.css') }}">
+</head>
+<body>
+   {% block title %}Vendre/Acheter un joueur{% endblock %}
+
+    {% block body %}
+        <h1>Vendre/Acheter un joueur</h1>
+
+        {{ form_start(form) }}
+
+        {{ form_row(form.selling_team) }}
+        {{ form_row(form.buying_team) }}
+        {{ form_row(form.player) }}
+        {{ form_row(form.amount) }}
+
+        {{ form_row(form.sell_buy) }}
+        </br>
+         <a href="{{ path('add_team') }}" class="btn btn-primary" id="add_team"> {{ form_row(form.add_players) }}</a></br>
+         <a href="{{ path('app_team') }}" class="btn btn-primary" id="app_team"> {{ form_row(form.return_list) }}</a>
+        {{ form_end(form) }}
+    {% endblock %}
+</body>
+</html>

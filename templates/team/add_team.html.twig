@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ma page</title>
+    <link rel="stylesheet" href="{{ asset('css/add_team.css') }}">
+</head>
+<body>
+    {% block content %}
+        <div class="form-container">
+            <h1>Ajouter une équipe et ses joueurs</h1>
+
+            {{ form_start(form) }}
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.country) }}
+            {{ form_row(form.silverSale) }}
+
+            <h2>Joueurs</h2>
+            <div id="team_players" data-prototype="{{ form_widget(form.players.vars.prototype, {'label': true}) }}">
+                    {% for playerForm in form.players %}
+                        {{ form_row(playerForm) }}
+                    {% endfor %}
+                    
+            {{ form_row(form.save) }}
+
+            <a href="{{ path('app_sell_buy') }}" class="btn btn-primary" id="app_sell_buy"> {{ form_row(form.sale_player_by) }}</a></br>
+            <a href="{{ path('app_team') }}" class="btn btn-primary" id="app_team"> {{ form_row(form.return_list) }}</a>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    {% endblock %}
+</body>
+</html>

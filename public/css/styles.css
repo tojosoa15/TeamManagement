@@ -1,0 +1,44 @@
+/* styles.css */
+
+/* Style pour la table */
+.team-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .team-table th, .team-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Style pour l'en-tête de la table */
+  .team-table th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Style pour les cellules avec les joueurs */
+  .team-table td.players-cell {
+    vertical-align: top; /* Aligner le contenu en haut */
+  }
+  
+  /* Style pour les joueurs dans une cellule */
+  .team-table td.players-cell li {
+    margin-bottom: 5px;
+  }
+  
+  /* Style pour le bouton Ajouter une équipe */
+  #add_team, #app_sell_buy {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  #add_team:hover, #app_sell_buy:hover{
+    background-color: #0056b3;
+  }

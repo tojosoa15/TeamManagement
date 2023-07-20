@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des équipes</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+</head>
+<body>
+    {% block content %}
+        <h1>Liste des équipes</h1>
+        <table class="team-table">
+            <thead>
+                <tr>
+                    <th>Équipe</th>
+                    <th>Pays</th>
+                    <th>Vente d'argent</th>
+                    <th>Joueurs</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in pagination %}
+                    <tr>
+                        <td>{{ team.getName() }}</td>
+                        <td>{{ team.getCountry() }}</td>
+                        <td>{{ team.getSilverSale() }}</td>
+                        <td rowspan="{{ team.getPlayers().count() }}">
+                            {% for player in team.getPlayers() %}
+                                {{ player.getFirsName() }} {{ player.getName() }}
+                                {% if not loop.last %}<br/>{% endif %}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ path('add_team') }}" class="btn btn-primary" id="add_team">Ajouter une équipe</a></br>
+        <a href="{{ path('app_sell_buy') }}" class="btn btn-primary" id="app_sell_buy"> Vendre/Acheter</a>
+        {{ knp_pagination_render(pagination) }}
+    {% endblock %}
+</body>
+</html>
